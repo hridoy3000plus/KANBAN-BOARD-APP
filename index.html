@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="auth-container">
+      <div class="auth-modal">
+        <div class="auth-logo">
+          <h1>Kanban Board</h1>
+        </div>
+        <div class="auth-container">
+          <h2>Welcome to Kanban Board</h2>
+          <p>
+            Please <a href="login.html">login</a> or
+            <a href="register.html">register</a> to continue.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="app-container" style="display: none">
+      <div id="header">
+        <div class="user-info">
+          Welcome, <span id="user-name"></span>!
+          <div class="user-actions">
+            <a href="profile.html" class="btn-profile">Profile</a>
+            <button id="logout-btn" class="btn-logout">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-wrapper">
+        <div id="kanban-container"></div>
+        <div class="add-list-button" id="add-list-trigger">
+          + Add another list
+        </div>
+        <div class="add-list-form" id="add-list-form">
+          <input
+            type="text"
+            class="add-list-input"
+            id="new-column-input"
+            placeholder="Enter list title..."
+          />
+          <div class="add-list-controls">
+            <button class="btn-add" id="create-column-btn">Add list</button>
+            <button class="btn-cancel" id="cancel-add-list">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="card-modal" class="modal">
+        <div class="modal-content">
+          <h2>Card Details</h2>
+          <input
+            type="text"
+            id="card-title"
+            class="modal-input"
+            placeholder="Title"
+          />
+          <textarea
+            id="card-description"
+            class="modal-input"
+            rows="4"
+            placeholder="Description"
+          ></textarea>
+          <select id="card-assignee" class="modal-input">
+            <option value="">Select Assignee</option>
+          </select>
+          <div>
+            <button id="save-card-btn">Save</button>
+            <button id="cancel-card-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
